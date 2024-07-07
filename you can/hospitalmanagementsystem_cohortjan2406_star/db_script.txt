@@ -1,0 +1,49 @@
+Outpatient Table :
+
+create table outpatient(
+patient_id varchar(20) primary key,
+patient_name varchar(25),
+phone_number bigint,
+age int,
+gender varchar(50),
+medical_history varchar(50),
+preffered_specialist varchar(50),
+medical_fee double,
+patient_type varchar(50),
+registration_fees double);
+
+
+Inpatient Table :
+
+
+
+
+
+
+
+
+Doctor Table :
+
+create table doctor(
+doctor_id varchar(25) primary key,
+doctor_name varchar(25),
+doctor_fee double,
+specialization varchar(25),
+availabledate date,
+available_time time
+);
+
+
+
+Appointment Management :
+
+Create table Appointment(
+APPOINTMENT_ID 	VARCHAR (25) primary key,  
+PATIENT_ID 	VARCHAR (25) references outpatient(patient_id), 
+DOCTOR_ID 	VARCHAR (25) references doctor(doctor_id), 
+DOCTOR_NAME 	VARCHAR (25),     
+SPECIALIZATION 	VARCHAR (25),     
+APPOINTMENT_DATE 	DATE, 
+APPOINTMENT_TIME 	TIME, 
+MODE_OF_APPOINTMENT 	VARCHAR (25)
+); 
